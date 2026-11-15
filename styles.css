@@ -165,7 +165,7 @@ body:not(.at-hero) .brand-text { opacity: 0; transform: translateY(calc(8 * var(
 .mstage {
   --m: calc(min(100vw, 560px) / 402);
   position: relative; width: calc(402 * var(--m)); margin: 0 auto;
-  display: flow-root; padding-bottom: calc(70 * var(--m));
+  padding-bottom: calc(70 * var(--m));
 }
 /* text + vinyl in normal flow: same 40px gap before the vinyl and 70px after the credits on every album */
 .mflow { position: relative; margin: calc(var(--fy) * var(--m)) 0 0 calc(32 * var(--m)); width: calc(338 * var(--m)); }
