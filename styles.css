@@ -7,15 +7,15 @@
 @font-face { font-family: "ME Euro"; font-weight: 700; font-style: italic; src: local("Eurostile Bold Oblique"), local("Eurostile-BoldOblique"); }
 @font-face { font-family: "ME Euro"; font-weight: 900; src: local("Eurostile Black"), local("Eurostile-Black"); }
 
-@font-face { font-family: "Saira ME"; font-weight: 400; font-display: swap; src: url(fonts/saira-latin-400-normal.woff2) format("woff2"); size-adjust: 93%; ascent-override: 79%; descent-override: 41%; line-gap-override: 0%; }
-@font-face { font-family: "Saira ME"; font-weight: 700; font-display: swap; src: url(fonts/saira-latin-700-normal.woff2) format("woff2"); size-adjust: 93%; ascent-override: 79%; descent-override: 41%; line-gap-override: 0%; }
-@font-face { font-family: "Saira ME"; font-weight: 700; font-style: italic; font-display: swap; src: url(fonts/saira-latin-700-italic.woff2) format("woff2"); size-adjust: 93%; ascent-override: 79%; descent-override: 41%; line-gap-override: 0%; }
-@font-face { font-family: "Saira ME"; font-weight: 600; font-display: swap; src: url(fonts/saira-latin-600-normal.woff2) format("woff2"); size-adjust: 93%; ascent-override: 79%; descent-override: 41%; line-gap-override: 0%; }
-@font-face { font-family: "Saira ME"; font-weight: 600; font-style: italic; font-display: swap; src: url(fonts/saira-latin-600-italic.woff2) format("woff2"); size-adjust: 93%; ascent-override: 79%; descent-override: 41%; line-gap-override: 0%; }
-@font-face { font-family: "Saira ME"; font-weight: 800; font-display: swap; src: url(fonts/saira-latin-800-normal.woff2) format("woff2"); size-adjust: 93%; ascent-override: 79%; descent-override: 41%; line-gap-override: 0%; }
-@font-face { font-family: "Saira ME"; font-weight: 800; font-style: italic; font-display: swap; src: url(fonts/saira-latin-800-italic.woff2) format("woff2"); size-adjust: 93%; ascent-override: 79%; descent-override: 41%; line-gap-override: 0%; }
-@font-face { font-family: "Saira ME"; font-weight: 900; font-style: italic; font-display: swap; src: url(fonts/saira-latin-900-italic.woff2) format("woff2"); size-adjust: 93%; ascent-override: 79%; descent-override: 41%; line-gap-override: 0%; }
-@font-face { font-family: "Saira ME"; font-weight: 900; font-display: swap; src: url(fonts/saira-latin-900-normal.woff2) format("woff2"); size-adjust: 93%; ascent-override: 79%; descent-override: 41%; line-gap-override: 0%; }
+@font-face { font-family: "Saira ME"; font-weight: 400; font-display: swap; src: url(fonts/saira-latin-400-normal.woff2) format("woff2"); size-adjust: 93%; }
+@font-face { font-family: "Saira ME"; font-weight: 700; font-display: swap; src: url(fonts/saira-latin-700-normal.woff2) format("woff2"); size-adjust: 93%; }
+@font-face { font-family: "Saira ME"; font-weight: 700; font-style: italic; font-display: swap; src: url(fonts/saira-latin-700-italic.woff2) format("woff2"); size-adjust: 93%; }
+@font-face { font-family: "Saira ME"; font-weight: 600; font-display: swap; src: url(fonts/saira-latin-600-normal.woff2) format("woff2"); size-adjust: 93%; }
+@font-face { font-family: "Saira ME"; font-weight: 600; font-style: italic; font-display: swap; src: url(fonts/saira-latin-600-italic.woff2) format("woff2"); size-adjust: 93%; }
+@font-face { font-family: "Saira ME"; font-weight: 800; font-display: swap; src: url(fonts/saira-latin-800-normal.woff2) format("woff2"); size-adjust: 93%; }
+@font-face { font-family: "Saira ME"; font-weight: 800; font-style: italic; font-display: swap; src: url(fonts/saira-latin-800-italic.woff2) format("woff2"); size-adjust: 93%; }
+@font-face { font-family: "Saira ME"; font-weight: 900; font-style: italic; font-display: swap; src: url(fonts/saira-latin-900-italic.woff2) format("woff2"); size-adjust: 93%; }
+@font-face { font-family: "Saira ME"; font-weight: 900; font-display: swap; src: url(fonts/saira-latin-900-normal.woff2) format("woff2"); size-adjust: 93%; }
 @font-face { font-family: "MonteCarlo"; font-display: swap; src: url(fonts/montecarlo-latin-400-normal.woff2) format("woff2"); }
 @font-face { font-family: "Annie Use Your Telescope"; font-display: swap; src: url(fonts/annie-use-your-telescope-latin-400-normal.woff2) format("woff2"); }
 @font-face { font-family: "LINE Seed JP"; font-weight: 800; font-display: swap; src: url(fonts/line-seed-jp-latin-800-normal.woff2) format("woff2"); }
@@ -235,9 +235,22 @@ body:not(.at-hero) .brand-text { opacity: 0; transform: translateY(calc(8 * var(
   .t20, .down { font-size: 17px; }
   .tour-list { font-size: 22px; white-space: normal; }
   .m-hide { display: none !important; }
-  .collage { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .collage > .wide { grid-column: span 2; }
-  .names { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+  /* hero: crowd full width / two band photos / Jerusalem 75% + building 25% */
+  .collage { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .collage .h-crowd { grid-column: 1 / -1; grid-row: 1; }
+  .collage .h-car   { grid-column: 1 / 3; grid-row: 2; }
+  .collage .h-back  { grid-column: 3 / 5; grid-row: 2; }
+  .collage .h-jer   { grid-column: 1 / 4; grid-row: 3; }
+  .collage .h-bldg  { grid-column: 4 / 5; grid-row: 3; position: relative; }
+  .collage .h-car > img.fill, .collage .h-back > img.fill { aspect-ratio: 311 / 373; }
+  .collage .h-bldg > img.fill { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; }
+  h1.a { aspect-ratio: 507 / 190; }
+  /* about: all three names on one row */
+  .names { display: flex; flex-wrap: nowrap; justify-content: space-between; }
+  .names .t36 { font-size: calc((100vw - 40px) * 0.0715); white-space: nowrap; }
+  /* section titles on one line */
+  .t96.fit-disc { font-size: calc((100vw - 40px) * 0.1218); white-space: nowrap; }
+  .t96.fit-tour { font-size: calc((100vw - 40px) * 0.0966); white-space: nowrap; }
   .disc-grid { display: grid; gap: 16px; }
   .disc { aspect-ratio: 1; }
   .disc-us { aspect-ratio: 419/426; }

@@ -57,11 +57,11 @@ const heroView = () => `
   <h1 class="a intro" style="${S({ x: 80, y: 204, w: 507, h: 190 })};--d:.15s"><img src="img/logo.svg" alt="MIDDLE EAST" style="width:100%;height:100%"></h1>
   <p class="a t36 upper intro" style="${S({ x: 998, y: 248 })};--d:.3s">Everywhere.<br>Nowhere at once.</p>
   <div class="collage">
-    ${photo('hero-car', { x: 511, y: 456, w: 311, h: 373 }, 'The band leaning on a vintage car in a Tel Aviv street', 'intro', '--d:.45s')}
-    ${photo('hero-crowd', { x: 941, y: 454, w: 419, h: 124 }, 'Concert crowd', 'intro wide', '--d:.55s;--ar:419/124')}
-    ${photo('hero-building', { x: 834, y: 590, w: 203, h: 239 }, 'Bauhaus building with rounded balconies', 'intro', '--d:.65s')}
-    ${photo('hero-backstage', { x: 1049, y: 590, w: 311, h: 373 }, 'The band backstage with a bass guitar', 'intro', '--d:.75s')}
-    ${photo('hero-jerusalem', { x: 510, y: 839, w: 419, h: 124 }, 'Jerusalem panorama', 'intro wide', '--d:.85s;--ar:419/124')}
+    ${photo('hero-car', { x: 511, y: 456, w: 311, h: 373 }, 'The band leaning on a vintage car in a Tel Aviv street', 'intro h-car', '--d:.45s')}
+    ${photo('hero-crowd', { x: 941, y: 454, w: 419, h: 124 }, 'Concert crowd', 'intro h-crowd', '--d:.55s;--ar:419/124')}
+    ${photo('hero-building', { x: 834, y: 590, w: 203, h: 239 }, 'Bauhaus building with rounded balconies', 'intro h-bldg', '--d:.65s')}
+    ${photo('hero-backstage', { x: 1049, y: 590, w: 311, h: 373 }, 'The band backstage with a bass guitar', 'intro h-back', '--d:.75s')}
+    ${photo('hero-jerusalem', { x: 510, y: 839, w: 419, h: 124 }, 'Jerusalem panorama', 'intro h-jer', '--d:.85s;--ar:419/124')}
   </div>
 </section>`;
 
@@ -91,7 +91,7 @@ const aboutView = () => `
 const discoView = () => `
 <section class="stage" id="s-discography">
   <div class="a banner m-hide" style="${S({ x: -2, y: 175, w: 1442, h: 183 })};--blur:3.5"><img src="img/banner-disco.jpg" alt=""></div>
-  <h2 class="a t96 rv" style="${S({ x: 0, y: 227, w: 1440 })};text-align:center">Our discography</h2>
+  <h2 class="a t96 rv fit-disc" style="${S({ x: 0, y: 227, w: 1440 })};text-align:center">Our discography</h2>
   <div class="disc-grid">
     <a class="a disc rv" href="#/album/saint-mullets" style="${S({ x: 80, y: 423, w: 418, h: 418 })}" aria-label="Saint Mullets — debut EP"><img class="fill" src="img/disco-sm.jpg" alt=""></a>
     <a class="a disc disc-us rv" href="#/album/us" style="${S({ x: 510, y: 423, w: 419, h: 418 })};--d:.08s" aria-label="Us — studio album">
@@ -107,7 +107,7 @@ const TOUR = [['Tel Aviv, Israel', '-11.04'], ['Madrid, Spain', '- 15.05'], ['Gl
 const tourView = () => `
 <section class="stage" id="s-tour">
   <div class="a banner m-hide" style="${S({ x: -2, y: 175, w: 1442, h: 320 })};--blur:5.3"><img src="img/banner-tour.jpg" alt=""></div>
-  <h2 class="a t96 rv" style="${S({ x: 0, y: 298, w: 1440 })};text-align:center">We are coming to you</h2>
+  <h2 class="a t96 rv fit-tour" style="${S({ x: 0, y: 298, w: 1440 })};text-align:center">We are coming to you</h2>
   <ul class="a tour-list" style="${S({ x: 0, y: 560, w: 1440 })}">
     ${TOUR.map(([c, d], i) => `<li class="rv" style="--d:${0.06 * i}s">${c} ${d}</li>`).join('')}
   </ul>
@@ -161,7 +161,7 @@ const ALBUMS = {
   </div>
   ${mock({ box: { x: 720, y: 775, w: 329, h: 218 }, sleeve: { dx: 117, w: 212, h: 218 }, src: 'img/sm-mockup.webp', alt: 'Saint Mullets vinyl', color: '#000', cover: COVERS.sm, mode: 'side' })}
 </section>
-<section class="mstage mob" style="--mh-frame:1711">
+<section class="mstage mob" style="--mh-frame:1400">
   <div class="ma" style="${M({ x: 0, y: 19, w: 402, h: 521 })}"><img class="fill intro" src="img/mob-sm.webp" alt="A horse with a wild, flowing mane" style="--d:.1s"></div>
   <h2 class="ma sm-title m-title intro" style="${M({ x: 32, y: 394 })};--d:.2s;font-size:calc(49.463 * var(--m));letter-spacing:-0.035em"><span class="mc">S</span>aint <span class="mc">M</span>ullets</h2>
   <p class="ma m36 intro" style="${M({ x: 200, y: 466 })};--d:.3s;--tx:-50%">Our debut EP</p>
@@ -188,7 +188,7 @@ const ALBUMS = {
   </div>
   ${mock({ box: { x: 73, y: 840, w: 330, h: 218 }, sleeve: { dx: 118, w: 212, h: 218 }, src: 'img/us-mockup.webp', alt: 'Us vinyl', color: '#fff', cover: COVERS.us, mode: 'side', d: 0.45 })}
 </section>
-<section class="mstage mob" style="--mh-frame:1542;color:#9e8e74">
+<section class="mstage mob" style="--mh-frame:1506;color:#9e8e74">
   <div class="ma" style="${M({ x: 0, y: 79, w: 402, h: 427 })}"><img class="fill intro" src="img/mob-us.webp" alt="The three band members sitting on old stone stairs" style="--d:.1s"></div>
   <h2 class="ma us-font m-title intro" style="${M({ x: 0, y: 357, w: 402 })};text-align:center;font-size:calc(96 * var(--m));--d:.2s">Us</h2>
   <p class="ma m36 intro" style="${M({ x: 207, y: 463 })};--d:.3s;--tx:-50%">Studio Album</p>
@@ -219,7 +219,7 @@ const ALBUMS = {
   </div>
   ${mock({ box: { x: 708, y: 859, w: 335, h: 218 }, sleeve: { dx: 123, w: 212, h: 217 }, src: 'img/stairs-mockup.webp', alt: 'Stairs vinyl', color: '#000', cover: COVERS.stairs, mode: 'side' })}
 </section>
-<section class="mstage mob" style="--mh-frame:1827;color:#5e3000">
+<section class="mstage mob" style="--mh-frame:1458;color:#5e3000">
   <div class="ma" style="${M({ x: 0, y: 0, w: 402, h: 551 })}"><img class="fill intro" src="img/mob-stairs.webp" alt="Sand-coloured stepwell stairs" style="--d:.1s"></div>
   <div class="ma intro" style="${M({ x: 65.72, y: 362.64, w: 270.55, h: 34.5 })};--d:.15s"><img src="img/stairs-line.svg" alt="" style="width:100%;height:100%"></div>
   <h2 class="ma stairs-title intro" style="${M({ x: 63, y: 356.3 })};letter-spacing:-0.06em;--d:.2s"><span style="font-size:calc(87.158*var(--m))">S</span><span style="font-size:calc(69*var(--m))">t</span><span style="font-size:calc(50.842*var(--m))">ai</span><span style="font-size:calc(69*var(--m))">r</span><span style="font-size:calc(87.158*var(--m))">s</span></h2>
@@ -317,6 +317,28 @@ addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
 });
 
+/* ---------- credits: keep the last line's baseline exactly on the cover's bottom edge
+   (measured in the browser, so it holds in every engine and with any installed font) ---------- */
+function alignCredits() {
+  document.querySelectorAll('.view.is-active .credits-side').forEach((c) => {
+    const m = c.closest('.mock');
+    if (!m.offsetParent) return;
+    c.style.transform = 'none';
+    const u = parseFloat(getComputedStyle(m).getPropertyValue('--cu')) || 0;
+    const cu = m.getBoundingClientRect().height / parseFloat(m.style.getPropertyValue('--mh'));
+    const coverBottom = m.getBoundingClientRect().top + parseFloat(m.style.getPropertyValue('--cb')) * cu;
+    const probe = document.createElement('span');
+    probe.style.cssText = 'display:inline-block;width:0;height:0;vertical-align:baseline';
+    c.appendChild(probe);
+    const baseline = probe.getBoundingClientRect().top;
+    probe.remove();
+    c.style.transform = `translateY(${coverBottom - baseline}px)`;
+  });
+}
+document.fonts && document.fonts.ready.then(alignCredits);
+addEventListener('resize', alignCredits);
+addEventListener('load', alignCredits);
+
 /* ---------- scroll reveal ---------- */
 const io = new IntersectionObserver((entries) => entries.forEach((e) => {
   if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
@@ -374,6 +396,7 @@ function route(first = false) {
     show(view);
     scrollTo(0, el ? el.offsetTop : 0);
     onScroll();
+    requestAnimationFrame(alignCredits);
     app.classList.remove('is-leaving');
   };
   if (first) return swap();
