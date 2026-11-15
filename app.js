@@ -90,7 +90,7 @@ const aboutView = () => `
 
 const discoView = () => `
 <section class="stage" id="s-discography">
-  <div class="a banner m-hide" style="${S({ x: -2, y: 175, w: 1442, h: 183 })};--blur:3.5"><img src="img/banner-disco.jpg" alt=""></div>
+  <div class="a banner" style="${S({ x: -2, y: 175, w: 1442, h: 183 })};--blur:3.5"><img src="img/banner-disco.jpg" alt=""></div>
   <h2 class="a t96 rv fit-disc" style="${S({ x: 0, y: 227, w: 1440 })};text-align:center">Our discography</h2>
   <div class="disc-grid">
     <a class="a disc rv" href="#/album/saint-mullets" style="${S({ x: 80, y: 423, w: 418, h: 418 })}" aria-label="Saint Mullets — debut EP"><img class="fill" src="img/disco-sm.jpg" alt=""></a>
@@ -106,7 +106,7 @@ const TOUR = [['Tel Aviv, Israel', '-11.04'], ['Madrid, Spain', '- 15.05'], ['Gl
   ['Beirut, Lebanon', '- TBA'], ['Tokyo, Japan', '- 01.10'], ['Tehran, Iran', '- 06.10'], ['Seoul, S.Korea', '- 28.10']];
 const tourView = () => `
 <section class="stage" id="s-tour">
-  <div class="a banner m-hide" style="${S({ x: -2, y: 175, w: 1442, h: 320 })};--blur:5.3"><img src="img/banner-tour.jpg" alt=""></div>
+  <div class="a banner" style="${S({ x: -2, y: 175, w: 1442, h: 320 })};--blur:5.3"><img src="img/banner-tour.jpg" alt=""></div>
   <h2 class="a t96 rv fit-tour" style="${S({ x: 0, y: 298, w: 1440 })};text-align:center">We are coming to you</h2>
   <ul class="a tour-list" style="${S({ x: 0, y: 560, w: 1440 })}">
     ${TOUR.map(([c, d], i) => `<li class="rv" style="--d:${0.06 * i}s">${c} ${d}</li>`).join('')}
@@ -161,17 +161,19 @@ const ALBUMS = {
   </div>
   ${mock({ box: { x: 720, y: 775, w: 329, h: 218 }, sleeve: { dx: 117, w: 212, h: 218 }, src: 'img/sm-mockup.webp', alt: 'Saint Mullets vinyl', color: '#000', cover: COVERS.sm, mode: 'side' })}
 </section>
-<section class="mstage mob" style="--mh-frame:1400">
+<section class="mstage mob" style="">
   <div class="ma" style="${M({ x: 0, y: 19, w: 402, h: 521 })}"><img class="fill intro" src="img/mob-sm.webp" alt="A horse with a wild, flowing mane" style="--d:.1s"></div>
   <h2 class="ma sm-title m-title intro" style="${M({ x: 32, y: 394 })};--d:.2s;font-size:calc(49.463 * var(--m));letter-spacing:-0.035em"><span class="mc">S</span>aint <span class="mc">M</span>ullets</h2>
   <p class="ma m36 intro" style="${M({ x: 200, y: 466 })};--d:.3s;--tx:-50%">Our debut EP</p>
-  <div class="ma m16 bold lines intro" style="${M({ x: 32, y: 549, w: 338 })};--d:.4s">
+  <div class="mflow" style="--fy:549">
+  <div class="m16 bold lines intro" style="--d:.4s">
     <p>Three men. Too many guitars. Questionable<br>haircuts. An unreasonable amount<br>of confidence.</p>
     <p><em class="blk">Saint Mullets</em> is the first sonic document of a band<br>that refuses to acknowledge borders, conventions,<br>or the general concept of good taste. Somewhere<br>between alternative rock, Middle Eastern absurdity,<br>and the glorious excess of the late twentieth<br>century, these tracks deliver a soundtrack for a<br>world that probably shouldn't exist, but somehow<br>does.</p>
     <p>Recorded somewhere between a revolution and a<br>backstage party, Saint Mullets is dedicated to the<br>misunderstood, the overdressed, the underqualified,<br>and everyone who ever thought rock 'n' roll could<br>save the world.</p>
     <p class="blk">No borders. No apologies. Just bigger hair.</p>
   </div>
-  ${mock({ box: { x: 37, y: 1069, w: 329, h: 218 }, sleeve: { dx: 117, w: 212, h: 218 }, src: 'img/sm-mockup.webp', alt: 'Saint Mullets vinyl', color: '#000', cover: COVERS.sm, mode: 'below', U: '--m', cls: 'ma' })}
+  ${mock({ box: { w: 329, h: 218 }, sleeve: { dx: 117, w: 212, h: 218 }, src: 'img/sm-mockup.webp', alt: 'Saint Mullets vinyl', color: '#000', cover: COVERS.sm, mode: 'below', U: '--m', cls: 'mflow-mock', d: 0.5 })}
+  </div>
 </section>` },
 
   us: { theme: 'us', html: () => `
@@ -188,18 +190,20 @@ const ALBUMS = {
   </div>
   ${mock({ box: { x: 73, y: 840, w: 330, h: 218 }, sleeve: { dx: 118, w: 212, h: 218 }, src: 'img/us-mockup.webp', alt: 'Us vinyl', color: '#fff', cover: COVERS.us, mode: 'side', d: 0.45 })}
 </section>
-<section class="mstage mob" style="--mh-frame:1506;color:#9e8e74">
+<section class="mstage mob" style="color:#9e8e74">
   <div class="ma" style="${M({ x: 0, y: 79, w: 402, h: 427 })}"><img class="fill intro" src="img/mob-us.webp" alt="The three band members sitting on old stone stairs" style="--d:.1s"></div>
   <h2 class="ma us-font m-title intro" style="${M({ x: 0, y: 357, w: 402 })};text-align:center;font-size:calc(96 * var(--m));--d:.2s">Us</h2>
   <p class="ma m36 intro" style="${M({ x: 207, y: 463 })};--d:.3s;--tx:-50%">Studio Album</p>
-  <div class="ma m16 bold lines intro" style="${M({ x: 32, y: 535, w: 338 })};--d:.4s">
+  <div class="mflow" style="--fy:535">
+  <div class="m16 bold lines intro" style="--d:.4s">
     <p>There was a time when our worlds were just a few<br>streets apart. Afternoons turned into evenings,<br>conversations went in every possible direction, and<br>somehow there was always something to laugh<br>about.</p>
     <p>We each had our own things going on. Questions<br>about the future, personal troubles, little victories,<br>disappointments, and the constant feeling that we<br>were supposed to be figuring something out. We<br>didn't always have answers for each other, but we<br>had time, company, and an endless supply of jokes.</p>
     <p><em class="blk">Us</em> is a collection of memories from that chapter.<br>Not necessarily the biggest moments, but the<br>ordinary ones that stayed with us. The kind you<br>don't realize you'll miss until they're already behind<br>you.</p>
     <p>Maybe we were just three friends trying to find our<br>way through life. Maybe that's what made it worth<br>remembering.</p>
     <p>Dedicated to the afternoons that became<br>memories.</p>
   </div>
-  ${mock({ box: { x: 36, y: 1175, w: 330, h: 218 }, sleeve: { dx: 118, w: 212, h: 218 }, src: 'img/us-mockup.webp', alt: 'Us vinyl', color: '#fff', cover: COVERS.us, mode: 'below', U: '--m', cls: 'ma' })}
+  ${mock({ box: { w: 330, h: 218 }, sleeve: { dx: 118, w: 212, h: 218 }, src: 'img/us-mockup.webp', alt: 'Us vinyl', color: '#fff', cover: COVERS.us, mode: 'below', U: '--m', cls: 'mflow-mock', d: 0.5 })}
+  </div>
 </section>` },
 
   stairs: { theme: 'stairs', html: () => `
@@ -219,19 +223,21 @@ const ALBUMS = {
   </div>
   ${mock({ box: { x: 708, y: 859, w: 335, h: 218 }, sleeve: { dx: 123, w: 212, h: 217 }, src: 'img/stairs-mockup.webp', alt: 'Stairs vinyl', color: '#000', cover: COVERS.stairs, mode: 'side' })}
 </section>
-<section class="mstage mob" style="--mh-frame:1458;color:#5e3000">
+<section class="mstage mob" style="color:#5e3000">
   <div class="ma" style="${M({ x: 0, y: 0, w: 402, h: 551 })}"><img class="fill intro" src="img/mob-stairs.webp" alt="Sand-coloured stepwell stairs" style="--d:.1s"></div>
   <div class="ma intro" style="${M({ x: 65.72, y: 362.64, w: 270.55, h: 34.5 })};--d:.15s"><img src="img/stairs-line.svg" alt="" style="width:100%;height:100%"></div>
   <h2 class="ma stairs-title intro" style="${M({ x: 63, y: 356.3 })};letter-spacing:-0.06em;--d:.2s"><span style="font-size:calc(87.158*var(--m))">S</span><span style="font-size:calc(69*var(--m))">t</span><span style="font-size:calc(50.842*var(--m))">ai</span><span style="font-size:calc(69*var(--m))">r</span><span style="font-size:calc(87.158*var(--m))">s</span></h2>
   <p class="ma m36 intro" style="${M({ x: 207, y: 467 })};--d:.3s;--tx:-50%">Mini Album</p>
-  <div class="ma m16 lines intro" style="${M({ x: 32, y: 535, w: 338 })};--d:.4s">
+  <div class="mflow" style="--fy:535">
+  <div class="m16 lines intro" style="--d:.4s">
     <p>Life rarely takes the route you had in mind.<br>Somewhere between falling in love, falling behind,<br>making plans, breaking promises, and trying to keep<br>your bank account alive until the end of the month, we<br>found ourselves climbing a rather complicated set of<br>stairs.</p>
     <p><em>Stairs</em> is about the strange architecture of everyday<br>life. The ups that don't last, the downs you didn't see<br>coming, relationships that take unexpected turns, and<br>the uncomfortable realization that growing up doesn't<br>necessarily make things any cheaper.</p>
     <p>There are bills to pay, hearts to mend, places to be,<br>and somehow never quite enough hours in the day.<br>Still, we keep moving. Sometimes confidently,<br>sometimes in circles, occasionally taking three steps<br>down after finally making it up two.</p>
     <p>No shortcuts, no elevator, and definitely no overtime<br>compensation.</p>
     <p><b>Life goes up. Life goes down. Rent is always due.</b></p>
   </div>
-  ${mock({ box: { x: 34, y: 1127, w: 335, h: 218 }, sleeve: { dx: 123, w: 212, h: 217 }, src: 'img/stairs-mockup.webp', alt: 'Stairs vinyl', color: '#000', cover: COVERS.stairs, mode: 'below', U: '--m', cls: 'ma' })}
+  ${mock({ box: { w: 335, h: 218 }, sleeve: { dx: 123, w: 212, h: 217 }, src: 'img/stairs-mockup.webp', alt: 'Stairs vinyl', color: '#000', cover: COVERS.stairs, mode: 'below', U: '--m', cls: 'mflow-mock', d: 0.5 })}
+  </div>
 </section>` },
 };
 
