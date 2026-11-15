@@ -102,7 +102,7 @@ const discoView = () => `
   <a class="a down" href="#/tour" style="${S({ x: 0, y: 930, w: 1440 })}">Check out our tour<img src="img/chevron.svg" alt=""></a>
 </section>`;
 
-const TOUR = [['Tel Aviv, Israel', '-11.04'], ['Madrid, Spain', '- 15.05'], ['Glastonbury, UK', '- TBA'], ['Damascus, Syria', '- TBA'],
+const TOUR = [['Tel Aviv, Israel', '- 11.04'], ['Madrid, Spain', '- 15.05'], ['Glastonbury, UK', '- TBA'], ['Damascus, Syria', '- TBA'],
   ['Beirut, Lebanon', '- TBA'], ['Tokyo, Japan', '- 01.10'], ['Tehran, Iran', '- 06.10'], ['Seoul, S.Korea', '- 28.10']];
 const tourView = () => `
 <section class="stage" id="s-tour">
